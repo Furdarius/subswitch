@@ -21,7 +21,7 @@ go get github.com/furdarius/subswitch
 // Let's serve static from domain.io
 // and REST api from api.domain.io
 ss := subswitch.New(http.FileServer(http.Dir("/tmp")), map[string]http.Handler{
-    "api": router),
+    "api": router,
 })
 
 // Use it like http.Handler
