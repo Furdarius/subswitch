@@ -11,19 +11,19 @@ func TestSubDomain(t *testing.T) {
 	tests := []struct {
 		host, expected string
 	}{
-		{"domain.ru", ""},
-		{"mydomain.ru", ""},
+		{"domain.io", ""},
+		{"mydomain.io", ""},
 		{"DOMAIN.com", ""},
 		{"domain.com:8000", ""},
-		{"my_domain-2123.ru:12323", ""},
-		{"domain.ru.com", "domain"},
+		{"my_domain-2123.io:12323", ""},
+		{"domain.io.com", "domain"},
 		{"go.go.go.go", "go.go"},
 		{"go.go", ""},
 		{"go.go:2323", ""},
 		{"go.go-go.go:2323", "go"},
 		{"wefkw.wefkwf3", ""},
 		{"fast:213", ""},
-		{"main.site.ru", "main"},
+		{"main.site.io", "main"},
 		{"fff.fwef3.we32r.wef23r.wef23.d2w1", "fff.fwef3.we32r.wef23r"},
 	}
 
@@ -46,7 +46,7 @@ func getTestHandler(output string) http.HandlerFunc {
 }
 
 func TestNew(t *testing.T) {
-	domain := "domain.ru"
+	domain := "domain.io"
 
 	subdomains := []string{
 		"one",
@@ -79,7 +79,7 @@ func TestNew(t *testing.T) {
 }
 
 func TestSubSwitch_ServeHTTP(t *testing.T) {
-	domain := "domain.ru"
+	domain := "domain.io"
 
 	subdomains := []string{
 		"one",
